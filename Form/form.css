@@ -1,0 +1,27 @@
+*{
+    padding: 0%;
+    margin: 0%;
+    background-color: rgb(72, 72, 72);
+}
+input{
+    display: block;
+    padding: 5px;
+    margin-top: 10px;
+    margin-left: 10px;
+}
+.card{
+    padding: 10px;
+    display: inline-block;
+    border: 2px solid rgb(110, 109, 109);   
+    border-radius: 5px;
+}
+.profile{
+    height: 40px;
+    width: 40px;
+    background-color: bisque;
+    border-radius: 50%;
+}
+.card h2{
+    margin-top: 15px;
+    margin-bottom: 10px;
+}

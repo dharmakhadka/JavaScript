@@ -18,7 +18,9 @@
         .submit{
             margin-left: 40%;
         }
-        
+        .error{
+            display: none;
+        }
     </style>
 </head>
 <body>
@@ -30,12 +32,14 @@
                 <label for="email">Email</label>
                 <br>
                 <input type="text" id="email" placeholder="Enter Your email">
+                <p id="error">Email Error</p>
             </div>
             <br>
             <div class="group">
                 <label for="password">Password</label>
                 <br>
                 <input type="text" id="password" placeholder="Enter Your Password">
+                <p id="error">Password Error</p>
             </div>
             <br>
             <input type="submit" class="submit">

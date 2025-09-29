@@ -5,6 +5,9 @@ let form = document.querySelector("form");
 
 form.addEventListener("submit",function(dets){
     dets.preventDefault();
+
+    document.querySelector("#error_email").textContent = "";
+    document.querySelector("#error_password").textContent = "";
     
     const email_regx = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+.[a-zA-Z]{2,}$/i
     const pass_regx = /^.{8,}$/;

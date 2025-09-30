@@ -18,14 +18,18 @@
         .submit{
             margin-left: 40%;
         }
-        
+        #result_text{
+            display: initial;
+            margin-left: 40%;
+            
+        }
     </style>
 </head>
 <body>
     <div class="container">
         
         <h2>Email Password Validator</h2>
-        <form autocomplete="off" id="loginform">   
+        <form autocomplete="on" id="loginform">   
             <div class="group">
                 <label for="email">Email</label>
                 <br>
@@ -40,8 +44,9 @@
                 <small id="error_password"></small>
             </div>
             <br>
-            <input type="submit" class="submit">
+            <button class= "submit" type = "submit">Validate</button>
         </form>
+        <div id="result_text"></div>
     </div>
     <script src="Email_pass_validator.js"></script>
 </body>

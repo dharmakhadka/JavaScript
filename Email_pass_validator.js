@@ -15,13 +15,21 @@ form.addEventListener("submit",function(dets){
     let email_c = email_regx.test(email.value);
     let pass_c = pass_regx.test(pass.value);
 
+    let isvalid = true;
+
     if(!email_c){
         document.querySelector("#error_email").style.display = "initial";
         document.querySelector("#error_email").textContent = "Error Email";
+        isvalid = false;
     }
     if(!pass_c){
         document.querySelector("#error_password").style.display = "initial";
         document.querySelector("#error_password").textContent = "Error Password";
+        isvalid = false;
     }
+    if(isvalid){
+        document.querySelector("#result_text").textContent = "Correct Credentials";
+    }
+
 
 })

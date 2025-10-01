@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Downloading…</title>
+  <style>
+    :root{
+      --bg-1:#0b0f16;
+      --bg-2:#0e141d;
+      --glass: rgba(255,255,255,0.06);
+      --glass-border: rgba(255,255,255,0.18);
+      --text:#e5e7eb;
+      --muted:#a8b3c7;
+      --track:#2a2f37;
+      --fill:#6ee7b7; /* mint/green */
+    }
+
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Inter, Arial, sans-serif;
+      color:var(--text);
+      background:
+        radial-gradient(1000px 500px at 85% 10%, rgba(100,116,139,0.15), transparent 60%),
+        radial-gradient(900px 450px at 10% 85%, rgba(34,197,94,0.10), transparent 60%),
+        linear-gradient(180deg, var(--bg-1), var(--bg-2));
+      display:grid;
+      place-items:center;
+      padding:24px;
+    }
+
+    /* Glass card */
+    .card{
+      width:min(92vw, 420px);
+      padding:28px 26px;
+      border-radius:18px;
+      background:var(--glass);
+      border:1px solid var(--glass-border);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      box-shadow:
+        0 20px 60px rgba(0,0,0,0.45),
+        inset 0 1px 0 rgba(255,255,255,0.06);
+      text-align:center;
+    }
+
+    .title{
+      margin:0 0 16px;
+      font-weight:600;
+      font-size:clamp(16px, 2.6vw, 18px);
+      letter-spacing:.2px;
+    }
+
+    /* Progress track */
+    .track{
+      position:relative;
+      height:12px;
+      width:100%;
+      border-radius:999px;
+      background: linear-gradient(180deg, #262b33, var(--track));
+      box-shadow: inset 0 2px 4px rgba(0,0,0,0.35);
+      overflow:hidden;
+      margin: 0 auto 12px;
+    }
+
+    /* Fill bar (JS will modify width) */
+    .bar{
+      position:absolute; inset:0 auto 0 0;
+      height:100%;
+      width:0%; /* start at 0, update with JS */
+      background: linear-gradient(180deg, #a7f3d0, var(--fill));
+      border-radius:inherit;
+      box-shadow: 0 6px 16px rgba(16,185,129,0.35);
+      
+    }
+
+    .percent{
+      margin:0;
+      font-size:13px;
+      color:var(--muted);
+      letter-spacing:.3px;
+      user-select:none;
+    }
+
+    /* Optional subtle vignette to match the screenshot mood */
+    .vignette::before{
+      content:"";
+      position:fixed; inset:0;
+      pointer-events:none;
+      background: radial-gradient(60% 50% at 50% 40%, transparent 60%, rgba(0,0,0,0.45) 100%);
+      mix-blend-mode:multiply;
+    }
+  </style>
+</head>
+<body class="vignette">
+  <section class="card" aria-live="polite" aria-label="Downloading status">
+    <h2 class="title">Downloading…</h2>
+
+    <div class="track" aria-hidden="true">
+      <div id="bar" class="bar"></div>
+    </div>
+
+    <p id="percentText" class="percent">0%</p>
+  </section>
+
+  <!-- JS hook ideas (to be added by the student):
+       - Update #bar.style.width = '40%';
+       - Update #percent.textContent = '40%';
+       - Optionally add ARIA: role="progressbar" with aria-valuenow/max/min on .track -->
+    </body>
+    <script src="downloading_UI.js"></script>
+</html>

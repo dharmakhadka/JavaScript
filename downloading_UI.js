@@ -1,12 +1,15 @@
-let count = 0;
 let progress = document.querySelector(".bar");
-let progressText = document.querySelector("#percentText");
+let percent = document.querySelector("#percentText");
+let count = 0;
 
-setInterval(function(){
-    if(count <= 99){
+let intv = setInterval(function(){
+    if(count<=99){
         count++;
         progress.style.width = `${count}%`;
-        progressText.textContent = `${count}%`;
-        
+        percent.textContent = `${count}%`;
     }
-}, 50);
+    else{
+        document.querySelector("h2").textContent = "Downloaded";
+        clearInterval(intv);
+    }
+},50)

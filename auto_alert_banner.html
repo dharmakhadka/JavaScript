@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Simple Top Alert</title>
+  <style>
+    /* Basic reset for demo */
+    body { margin: 0; font-family: system-ui, sans-serif; }
+
+    /* Simple alert bar pinned to top */
+    .alert {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      padding: 10px 16px;
+      background: #f44336;   /* red */
+      color: #fff;
+      text-align: center;
+      display: none;
+    }
+
+    /* Push content so it’s not hidden under fixed bar */
+    main { padding-top: 56px; }
+  </style>
+</head>
+<body>
+  <div class="alert" role="alert">This is a simple alert message.</div>
+
+  <main>
+    <h1>Page content</h1>
+    <p>Content goes here.</p>
+    <button>Alert</button>
+  </main>
+</body>
+<script src="autohidebanner.js"></script>
+</html>
